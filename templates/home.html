@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %} Welcome to MacroMania {% endblock %}
+
+
+{% block body %}
+
+
+<div class="container text-center my-3 ">
+
+    <form action="{{url_for('home')}}" method="post">
+
+        <label for="tagarea" class="fs-4 fw-semibold">Please Paste Your Tag Here:</label><br>
+        <textarea name="tag" id="tagarea" cols="110" rows="12"></textarea><br>
+        <button class="btn btn-outline-dark" type="submit" value="submit">Place Macro</button>
+
+    </form>
+</div>
+
+{% if final_tag %}
+<div class="container text-center my-3">
+        <p class="fs-4 fw-semibold">Yaay! Macro is Placed!</p><br>
+        <div style="padding-left: 10%;">
+            <pre><code id="final_code">{{final_tag}}</code></pre>
+        </div> 
+        
+</div>
+<div class="alert alert-warning text-sm-center container-sm" role="alert">
+    Please click Place Macro button again to reset!!
+</div>
+<!-- <button class="btn btn-outline-dark" type="button" href="{{url_for('home')}}">Reset</button> -->
+
+{% else %}
+<div class="alert alert-dark text-sm-center container-sm" role="alert">
+    No Tag Placed Yet! Place your tag above...
+</div>
+
+{% endif %}
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Your History! {% endblock %}
+
+{% block body %}
+<div class="container text-end">
+    <p class="fs-4 fw-semibold"> Your previous history </p>
+</div>
+
+<table class="table table-striped m-3 p-3">
+    <thead>
+      <tr>
+        <th scope="col">SNo</th>
+        <th scope="col">Tag</th>
+        <th scope="col">Tag With Macro</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>date</td>
+      </tr>
+    </tbody>
+  </table>
+
+        
+{% endblock%}
